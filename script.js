@@ -69,7 +69,8 @@ function onPokemonClick(element, index) {
   <div><b>Abilities: </b></span><span  class="answer">${getAbilityHtmlText(pokemon.details.abilities)}</div>
   <div><b>Height: </b></span><spanclass="answer">${pokemon.details.height}</div>
   <div><b>Base Experience: </b></span><span class="answer">${pokemon.details.base_experience}</div>`;
-  document.querySelector("#pokemon-abilities").innerHTML = ``;
+  document.querySelector("#pokemon-specs").classList.remove('visually-hidden')
+  document.querySelector("#pokemon-abilities").classList.add('visually-hidden');
 }
 
 
@@ -79,15 +80,9 @@ function getAbilityHtmlText(abilities) {
     if (text != '') {
       text += ", ";
     }
-    text = text + `<span class="pointer" onClick="getPokemonAbilityDetail('${ability.ability.url}')">${ability.ability.name}</span>`
+    text = text + `<span class="ability-tag pointer" onClick="getPokemonAbilityDetail('${ability.ability.url}')">${ability.ability.name}</span>`
   });
   return text;
-}
-
-function onAbilityClicked(index) {
-  if (selectedPokemon != null) {
-    alert(selectedPokemon.details.abilities[index].ability.name);
-  }
 }
 
 
@@ -116,6 +111,7 @@ async function getPokemonAbilityDetail(url) {
       <div><b>Ability Effect: </b></span><span class="answer">${abilityEffect}</div>
       <div><b>Short Effect: </b></span><span class="answer">${shortEffect}</div>
       <div><b>Flavour Text: </b></span><span class="answer">${flavorText}</div>`
+  document.querySelector("#pokemon-abilities").classList.remove('visually-hidden')
   }
 }
 

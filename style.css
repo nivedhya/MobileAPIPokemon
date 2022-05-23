@@ -57,11 +57,24 @@ a {
 .pokemon-details{
   margin-top: 2rem;
 }
+#pokemon-specs, #pokemon-abilities{
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 10px;
+}
 #pokemon-specs div, #pokemon-abilities div {
   margin-top: 1rem;
 }
 .answer{
   color: rgb(40, 61, 114);
+}
+.ability-tag{
+  color:rgb(26, 146, 216)
+}
+.ability-tag:hover{
+  text-decoration: underline;
+}
+h2{
+  color: brown;
 }
 .pokemon-item{
   cursor: pointer;
@@ -70,8 +83,16 @@ a {
   border: 1px solid white;
   padding: 5px;
 }
+.pokemon-item:hover{
+  transform: scale(1.1);
+}
+
 .pokemon-active{
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.pokemon-active:hover{
+  transform: scale(1);
 }
 
 .pokemon-name{
